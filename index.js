@@ -2,7 +2,8 @@ var express = require('express'),
 path = require('path'),
 app = express();
 
-app.set('port', 3000);
+var port = process.env.PORT || 8080
+app.set('port', port);
 app.use(express.static(path.join(__dirname, '/dist')));
 
 var server = app.listen(app.get('port'), function () {
